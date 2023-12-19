@@ -1,7 +1,9 @@
 package fr.dawan.business.article;
 
+import fr.dawan.business.category.Category;
 import fr.dawan.business.generic.BaseEntity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,5 +19,7 @@ import lombok.experimental.Accessors;
 public class Article extends BaseEntity {
 	
 	private String title;
+	@ManyToOne
+	private Category category;
 	
 }
