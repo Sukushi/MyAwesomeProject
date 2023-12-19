@@ -12,7 +12,7 @@ public abstract class GenericServiceBDD
 	<E extends BaseEntity, R extends JpaRepository<E,Long>>
 	implements GenericService<E> {
 	
-	private final R repository;
+	protected final R repository;
 	
 	@Override
 	public Page<E> findAll(Pageable pageable) {

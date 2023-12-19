@@ -11,7 +11,7 @@ import java.util.Optional;
 public abstract class GenericController
 	<E extends BaseEntity, S extends GenericService<E>> {
 	
-	private final S service;
+	protected final S service;
 	
 	@GetMapping
 	public Page<E> findAll(Pageable pageable) {
