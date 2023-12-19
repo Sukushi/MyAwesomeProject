@@ -17,10 +17,17 @@ public class ArticleController extends GenericController<Article, ArticleService
 	}
 	
 	@GetMapping("byTitle/{title}")
-	/*
+	/* en POST
+	création
 	{
+		"id":0,
 		"title":"bogoss de fou",
-		category: {
+	}
+	
+	modification
+	{
+		"id":1,
+		"category":{
 			"id":1
 		}
 	}
