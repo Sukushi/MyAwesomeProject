@@ -16,6 +16,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Category extends BaseEntity {
 	
-	private String title;
+	private String name;
 	
 }
