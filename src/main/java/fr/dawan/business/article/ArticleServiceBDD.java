@@ -14,6 +14,6 @@ public class ArticleServiceBDD extends GenericServiceBDD<Article,ArticleReposito
 	
 	@Override
 	public List<Article> findByTitle(String title) {
-		return repository.findByTitle(title);
+		return repository.findByTitleLike("%" + title + "%");
 	}
 }
