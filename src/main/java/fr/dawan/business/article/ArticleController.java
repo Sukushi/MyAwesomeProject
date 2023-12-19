@@ -1,6 +1,7 @@
 package fr.dawan.business.article;
 
 import fr.dawan.business.generic.GenericController;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,9 @@ public class ArticleController extends GenericController<Article, ArticleService
 	}
 	
 	@GetMapping("byTitle/{title}")
-	//http://localhost:8080/articles/byTitle/bogoss?page=0?size=10
-	List<Article> findByTitle(@PathVariable String title, Pageable pageable) {
+	// http://localhost:8080/articles/byTitle/bogoss
+	// http://localhost:8080/articles/byTitle/bogoss?page=0&size=10&sort=id,desc
+	Page<Article> findByTitle(@PathVariable String title, Pageable pageable) {
 		return service.findByTitle(title, pageable);
 	}
 	

@@ -1,6 +1,7 @@
 package fr.dawan.business.article;
 
 import fr.dawan.business.generic.GenericServiceBDD;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 
@@ -14,7 +15,7 @@ public class ArticleServiceBDD extends GenericServiceBDD<Article,ArticleReposito
 	}
 	
 	@Override
-	public List<Article> findByTitle(String title, Pageable pageable) {
+	public Page<Article> findByTitle(String title, Pageable pageable) {
 		return repository.findByTitleLike("%" + title + "%", pageable);
 	}
 }
