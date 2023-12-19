@@ -10,7 +10,7 @@ import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("articles")
-public class ArticleController extends GenericController<Article, ArticleService> {
+public class ArticleController extends GenericController<Article, ArticleDto, ArticleService> {
 	
 	public ArticleController(ArticleService service) {
 		super(service);

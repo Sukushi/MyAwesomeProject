@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 
 @Service
-public class ArticleServiceBDD extends GenericServiceBDD<Article,ArticleRepository> implements ArticleService {
+public class ArticleServiceBDD extends GenericServiceBDD<Article,ArticleRepository,ArticleDto,ArticleMapper> implements ArticleService {
 	
-	public ArticleServiceBDD(ArticleRepository repository) {
-		super(repository);
+	public ArticleServiceBDD(ArticleRepository repository, ArticleMapper mapper) {
+		super(repository, mapper);
 	}
 	
 	@Override

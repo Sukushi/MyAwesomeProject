@@ -9,10 +9,11 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public abstract class GenericServiceBDD
-	<E extends BaseEntity, R extends JpaRepository<E,Long>>
-	implements GenericService<E> {
+	<E extends BaseEntity, R extends JpaRepository<E,Long>, D, M extends GenericMapper<E,D>>
+	implements GenericService<E,D> {
 	
 	protected final R repository;
+	protected final M mapper;
 	
 	@Override
 	public Page<E> findAll(Pageable pageable) {
@@ -22,6 +23,10 @@ public abstract class GenericServiceBDD
 	@Override
 	public Optional<E> findById(long id) {
 		return repository.findById(id);
+	}
+	
+	public Optional<D> findDtoById(long id) {
+		return repository.findById(id).map(mapper::toDto);
 	}
 	
 	@Override

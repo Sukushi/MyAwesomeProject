@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 public abstract class GenericController
-	<E extends BaseEntity, S extends GenericService<E>> {
+	<E extends BaseEntity, D, S extends GenericService<E,D>> {
 	
 	protected final S service;
 	
