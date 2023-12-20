@@ -13,6 +13,9 @@ public class ArticleDto {
 	private long id;
 	private int version;
 	private String title;
-	private String categoryName;
+	private ArticleCategoryDto category;
+	// si on utilise pas ArticleCategoryDto
+	/*private String categoryName;
+	private Long categoryId;*/
 	
 }
