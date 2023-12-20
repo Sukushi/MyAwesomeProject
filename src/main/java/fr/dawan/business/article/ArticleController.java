@@ -10,7 +10,7 @@ import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequestMapping("articles")
-public class ArticleController extends GenericController<Article, ArticleDto, ArticleService> {
+public class ArticleController extends GenericController<ArticleDto, ArticleService> {
 	
 	public ArticleController(ArticleService service) {
 		super(service);
@@ -34,13 +34,13 @@ public class ArticleController extends GenericController<Article, ArticleDto, Ar
 	*/
 	// http://localhost:8080/articles/byTitle/bogoss
 	// http://localhost:8080/articles/byTitle/bogoss?page=0&size=10&sort=id,desc
-	Page<Article> findByTitle(@PathVariable String title, Pageable pageable) {
+	Page<ArticleDto> findByTitle(@PathVariable String title, Pageable pageable) {
 		return service.findByTitle(title, pageable);
 	}
 	
 	@GetMapping("byCategory/{name}")
 	// http://localhost:8080/articles/byCategory/news
-	public Page<Article> findByCategory_NameIgnoreCase(@PathVariable String name, Pageable pageable) {
+	public Page<ArticleDto> findByCategory_NameIgnoreCase(@PathVariable String name, Pageable pageable) {
 		return service.findByCategory_NameIgnoreCase(name,pageable);
 	}
 	

@@ -4,10 +4,10 @@ import fr.dawan.business.generic.GenericService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface ArticleService extends GenericService<Article, ArticleDto> {
+public interface ArticleService extends GenericService<ArticleDto> {
 	
-	Page<Article> findByTitle(String title, Pageable pageable);
+	Page<ArticleDto> findByTitle(String title, Pageable pageable);
 	
-	Page<Article> findByCategory_NameIgnoreCase(String name, Pageable pageable);
+	Page<ArticleDto> findByCategory_NameIgnoreCase(String name, Pageable pageable);
 	
 }

@@ -13,13 +13,13 @@ public class ArticleServiceBDD extends GenericServiceBDD<Article,ArticleReposito
 	}
 	
 	@Override
-	public Page<Article> findByTitle(String title, Pageable pageable) {
-		return repository.findByTitleLike("%" + title + "%", pageable);
+	public Page<ArticleDto> findByTitle(String title, Pageable pageable) {
+		return repository.findByTitleLike("%" + title + "%", pageable).map(mapper::toDto);
 	}
 	
 	@Override
-	public Page<Article> findByCategory_NameIgnoreCase(String name, Pageable pageable) {
-		return repository.findByCategory_NameIgnoreCase(name,pageable);
+	public Page<ArticleDto> findByCategory_NameIgnoreCase(String name, Pageable pageable) {
+		return repository.findByCategory_NameIgnoreCase(name,pageable).map(mapper::toDto);
 	}
 	
 }
