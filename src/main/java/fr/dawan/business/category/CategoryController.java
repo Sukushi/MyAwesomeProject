@@ -16,9 +16,4 @@ public class CategoryController extends GenericController<Category, CategoryDto,
 		super(service);
 	}
 	
-	@GetMapping("/toDto/{id}")
-	public Optional<CategoryDto> findDtoById(@PathVariable long id) {
-		return service.findDtoById(id);
-	}
-	
 }

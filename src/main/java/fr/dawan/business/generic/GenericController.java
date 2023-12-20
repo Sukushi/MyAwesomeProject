@@ -1,5 +1,6 @@
 package fr.dawan.business.generic;
 
+import fr.dawan.business.category.CategoryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +22,11 @@ public abstract class GenericController
 	@GetMapping("/{id}")
 	public Optional<E> findById(@PathVariable long id) {
 		return service.findById(id);
+	}
+	
+	@GetMapping("/toDto/{id}")
+	public Optional<D> findDtoById(@PathVariable long id) {
+		return service.findDtoById(id);
 	}
 	
 	@PostMapping
