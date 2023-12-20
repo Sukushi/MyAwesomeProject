@@ -10,7 +10,7 @@ class MainTest {
 	
 	@Test
 	void contextLoad() {
-	
+		assertTrue(false);
 	}
 	
 }
