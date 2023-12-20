@@ -14,6 +14,7 @@ public class CategoryDto {
 	private long id;
 	private int version;
 	private String name;
+	private List<CategoryDto> articles;
 	private long articleCount;
 	
 }
