@@ -16,7 +16,6 @@ public class ArticleController extends GenericController<ArticleDto, ArticleServ
 		super(service);
 	}
 	
-	@GetMapping("byTitle/{title}")
 	/* en POST
 	création
 	{
@@ -34,7 +33,8 @@ public class ArticleController extends GenericController<ArticleDto, ArticleServ
 	*/
 	// http://localhost:8080/articles/byTitle/bogoss
 	// http://localhost:8080/articles/byTitle/bogoss?page=0&size=10&sort=id,desc
-	Page<ArticleDto> findByTitle(@PathVariable String title, Pageable pageable) {
+	@GetMapping("byTitle/{title}")
+	public Page<ArticleDto> findByTitle(@PathVariable String title, Pageable pageable) {
 		return service.findByTitle(title, pageable);
 	}
 	
