@@ -36,7 +36,7 @@ class ArticleControllerTest {
 		Article article1 = new Article("article de bogoss", null);
 		Article article2 = new Article("article de giga bogoss", null);
 		// Article article3 = new Article("article pas ouf", null); // ne pas ajouter dans la List car il ne contient pas ce qu'on recherche (title)
-		Page<Article> entities = new PageImpl<>(List.of(article1,article2));
+		Page<Article> entities = new PageImpl<>(List.of(article1,article2), pageable, 2);
 		
 		Mockito.when(repository.findByTitleLike("%" + title + "%",pageable)).thenReturn(entities);
 		

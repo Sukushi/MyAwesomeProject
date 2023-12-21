@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("articles")
 public class ArticleController extends GenericController<ArticleDto, ArticleService> {
@@ -36,8 +34,8 @@ public class ArticleController extends GenericController<ArticleDto, ArticleServ
 	// http://localhost:8080/articles/byTitle/bogoss
 	// http://localhost:8080/articles/byTitle/bogoss?page=0&size=10&sort=id,desc
 	@GetMapping("byTitle/{title}")
-	public List<ArticleDto> findByTitle(@PathVariable String title, Pageable pageable) {
-		return service.findByTitle(title, pageable).getContent();
+	public Page<ArticleDto> findByTitle(@PathVariable String title, Pageable pageable) {
+		return service.findByTitle(title, pageable);
 	}
 	
 	@GetMapping("byCategory/{name}")
