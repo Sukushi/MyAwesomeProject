@@ -51,6 +51,8 @@ class ArticleControllerTest {
 		).andExpect( // vous pouvez enchainer de 'andExpect' que vous souhaitez pour vérifier différents éléments
 				jsonPath("$") // correspond au body de la réponse HTTP
 						.isNotEmpty()
-		);
+			).andExpect(
+					jsonPath("$.numberOfElements").value(2) // vérifie qu'on récupère deux éléments dans le '$.content'
+			);
 	}
 }
