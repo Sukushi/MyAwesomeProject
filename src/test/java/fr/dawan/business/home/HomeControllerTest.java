@@ -8,6 +8,6 @@ class HomeControllerTest {
 	
 	@Test
 	void index() {
-		assertEquals("Subscribe to my OnlyFans !", new HomeController().index());
+		assertEquals("Hello !", new HomeController().index());
 	}
 }
