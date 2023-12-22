@@ -17,8 +17,8 @@ public class AuthServiceBDD implements AuthService {
 	
 	@Override
 	public void register(RegisterDto registerDto) {
-		String encodedPassword = registerDto.getPassword();
-		User newuser = new User(registerDto.getUsername(),registerDto.getEmail(),encodedPassword);
+		String encodedPassword = encoder.encode(registerDto.getPassword());
+		User newuser = new User(registerDto.getUsername(),registerDto.getEmail(),encodedPassword,"PUBLIC");
 		repository.save(newuser);
 	}
 	
