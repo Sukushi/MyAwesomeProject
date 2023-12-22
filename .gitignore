@@ -37,3 +37,11 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/.idea/codeStyles/
+/.idea/encodings.xml
+/.idea/git_toolbox_prj.xml
+/.idea/jpa-buddy.xml
+/.idea/misc.xml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml
+/.idea/.gitignore
